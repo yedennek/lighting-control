@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   end
 
   get 'config', to: 'configuration#index', as: :config_path 
+  post 'config/upload', to: 'configuration#upload', as: :config_upload_path 
 end

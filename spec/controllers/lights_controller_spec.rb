@@ -13,10 +13,10 @@ describe LightsController do
   end
 
   describe "PUT update" do
-    let(:light_json) { {id: 1, name: "Office", on: true, colour: "ffffff"} }
+    let(:light_json) { {id: 1, name: "Office", on: true, colour: "ffffff", group_number: 1} }
 
     before do
-      @light = Light.create(name: "Office", on: false, colour: "ffffff")
+      @light = Light.create(name: "Office", on: false, colour: "ffffff", group_number: 1)
     end
 
     after do
@@ -24,7 +24,7 @@ describe LightsController do
     end
 
     it "returns json of current light state" do
-      expected_json = {id: 1, name: "Office", on: true, colour: "ffffff"}.to_json
+      expected_json = {id: 1, name: "Office", on: true, colour: "ffffff", light_controller_id: nil, group_number: 1 }.to_json
       put :update, light_json
       expect(response.status).to eq 200
       expect(response.body).to eq expected_json

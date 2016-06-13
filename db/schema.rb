@@ -11,12 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150706102718) do
+ActiveRecord::Schema.define(version: 20160613142529) do
+
+  create_table "light_controllers", force: :cascade do |t|
+    t.string "ip_address"
+    t.string "name"
+  end
 
   create_table "lights", force: :cascade do |t|
     t.string  "name"
     t.boolean "on"
     t.string  "colour"
+    t.integer "light_controller_id"
+    t.integer "group_number"
   end
+
+  add_index "lights", ["light_controller_id"], name: "index_lights_on_light_controller_id"
 
 end

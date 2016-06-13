@@ -1,0 +1,36 @@
+{
+  "controllers": [
+    { 
+      "ip": "192.168.0.10",
+      "name": "Upstairs",
+      "groups" : [
+        {
+          "number" : 1,
+          "name" : "Office 1"
+        },
+        {
+          "number" : 2,
+          "name" : "Office 2"
+        },
+        {
+          "number" : 3,
+          "name" : "Landing"
+        },
+        {
+          "number" : 4,
+          "name" : "Bedroom"
+        }
+      ]
+    },
+    {
+      "ip": "192.168.0.11",
+      "name": "Downstairs",
+      "groups" : [
+        {
+          "number" : 1,
+          "name" : "Porch"
+        }
+      ]
+    }
+  ]
+}

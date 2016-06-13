@@ -27,7 +27,7 @@ describe ConfigurationController do
     it "creates lights and lighting groups" do
       post :upload, :config_file => @file
       expect(Light.all.size).to eq 5
-      expect(LightController.all.size).to eq 2
+      expect(LightGroup.all.size).to eq 2
     end
   end
 end

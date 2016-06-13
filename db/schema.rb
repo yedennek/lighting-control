@@ -11,9 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160613142529) do
+ActiveRecord::Schema.define(version: 20160613143603) do
 
-  create_table "light_controllers", force: :cascade do |t|
+  create_table "light_groups", force: :cascade do |t|
     t.string "ip_address"
     t.string "name"
   end

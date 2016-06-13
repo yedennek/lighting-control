@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/AdamWhittingham/milight.git
+  revision: 8a5d914af732ca02b0019c0c008047a9158197af
+  specs:
+    milight (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -186,6 +192,7 @@ DEPENDENCIES
   haml
   jbuilder (~> 2.0)
   jquery-rails
+  milight!
   rabl
   rails (= 4.2.1)
   react-rails (~> 1.0)

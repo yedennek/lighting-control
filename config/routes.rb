@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'lights#index'
+
   resources :lights, only: [:index] do
     put 'update', on: :collection
   end

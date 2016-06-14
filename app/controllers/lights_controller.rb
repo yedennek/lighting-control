@@ -8,6 +8,7 @@ class LightsController < ApplicationController
   def update
     light = Light.find_by(id: params[:id])
     light.update(on: params[:on])
+    light.post_milight
     render status: 200, json: light.to_json
   end
 end

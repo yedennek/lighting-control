@@ -13,21 +13,23 @@ describe LightsController do
   end
 
   describe "PUT update" do
+    let(:light) { spy :light, to_json: @expected_json }
     let(:light_json) { {id: 1, name: "Office", on: true, colour: "ffffff", group_number: 1} }
 
     before do
-      @light = Light.create(name: "Office", on: false, colour: "ffffff", group_number: 1)
-    end
-
-    after do
-      @light.destroy
+      @expected_json = {id: 1, name: "Office", on: true, colour: "ffffff", light_controller_id: 3, group_number: 1 }.to_json
+      allow(Light).to receive(:find_by).with(id: "1").and_return light
     end
 
     it "returns json of current light state" do
-      expected_json = {id: 1, name: "Office", on: true, colour: "ffffff", light_controller_id: nil, group_number: 1 }.to_json
       put :update, light_json
       expect(response.status).to eq 200
-      expect(response.body).to eq expected_json
+      expect(response.body).to eq @expected_json
+    end
+
+    it "calls milight controller to update light state" do
+      put :update, light_json
+      expect(light).to have_received(:post_milight)
     end
   end
 end

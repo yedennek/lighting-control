@@ -18,7 +18,7 @@ class ConfigurationController < ApplicationController
     controllers.each do |controller|
       light_group = LightGroup.create(ip_address: controller['ip'], name: controller['name'])
       controller['groups'].each do |light|
-        Light.create(name: light['name'], group_number: light['number'], light_controller_id: light_group)
+        Light.create(name: light['name'], group_number: light['number'], light_controller_id: light_group, colour: 'ffffff')
       end
     end
   end

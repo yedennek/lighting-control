@@ -1,27 +1,31 @@
 source 'https://rubygems.org'
 
+gem 'rails', '~> 4.2'
+gem 'sqlite3'
+
 gem 'bootstrap-sass'
-gem 'coffee-rails', '~> 4.1.0'
 gem 'haml'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
-gem 'milight', :git => 'https://github.com/AdamWhittingham/milight.git'
-
-gem 'rabl'
-gem 'rails', '4.2.1'
-gem 'react-rails', '~> 1.0'
-gem 'responders', '~> 2.0'
-gem 'sass-rails', '~> 5.0'
-gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'sqlite3'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
+gem 'rabl'
+gem 'react-rails', '~> 1.0'
+gem 'sass-rails', '~> 5.0'
+
+gem 'responders'
+gem 'milight', :git => 'https://github.com/AdamWhittingham/milight.git'
 
 group :development, :test do
   gem 'byebug'
   gem 'spring'
   gem 'rake-n-bake'
+end
+
+group :development do
   gem 'web-console', '~> 2.0'
+  gem 'brakeman'
+  gem 'bundler-audit'
 end
 
 group :test do

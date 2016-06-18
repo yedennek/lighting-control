@@ -7,7 +7,7 @@ class ConfigurationController < ApplicationController
     uploaded_io = params[:config_file]
     config_json = JSON.parse uploaded_io.read
     create_lights config_json
-    render :index
+    redirect_to root_path
   end
   
   private

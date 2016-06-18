@@ -16,12 +16,12 @@ describe ConfigurationController do
 
     it "can upload a configuration file" do
       post :upload, :config_file => @file
-      expect(response.status).to eq(200)
+      expect(response.status).to eq(302)
     end
 
-    it "displays configuration template" do
+    it "redirects to lights page" do
       post :upload, :config_file => @file
-      expect(response).to render_template :index
+      expect(response).to redirect_to root_path 
     end
 
     it "creates lights and lighting groups" do

@@ -23,8 +23,11 @@ body {
 
 .rooms {
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
 }
 
+.add,
 .room {
   background-color: rgba(128,128,128,0.1);
   padding: 10px;
@@ -60,3 +63,11 @@ body {
   }
 }
 
+.add{
+  padding-top: 2em;
+  a.add-link{
+    text-decoration: none;
+    color: #999;
+    font-size: 3em;
+  }
+}

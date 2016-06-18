@@ -60,6 +60,9 @@ var SwitchGroup = React.createClass({
       <div>
         <div className="rooms">
           {switchNodes}
+          <div className="add">
+            <a className="add-link" href='/config'>+</a>
+          </div>
         </div>
       </div>
     );

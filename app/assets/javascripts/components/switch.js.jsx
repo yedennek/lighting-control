@@ -6,7 +6,6 @@ var Switch = React.createClass({
 
   render: function() {
     var activeClass = this.props.on ? 'switch active' : 'switch';
-    var activeText = this.props.on? 'ON' : 'OFF';
     var colour = this.props.on? '#'+ this.props.colour : '#444';
     var btnStyle = {background: colour};
 
@@ -14,7 +13,6 @@ var Switch = React.createClass({
       <div className="room">
         <p className="switch-label">
           {this.props.room}
-          <span className="state"> {activeText}</span>
         </p>
         <span onClick={this.handleClick} className={activeClass} style={btnStyle}/>
       </div>

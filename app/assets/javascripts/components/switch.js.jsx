@@ -7,7 +7,7 @@ var Switch = React.createClass({
   render: function() {
     var activeClass = this.props.on ? 'switch active' : 'switch';
     var activeText = this.props.on? 'ON' : 'OFF';
-    var colour = this.props.on? '#'+ this.props.colour : '#fff';
+    var colour = this.props.on? '#'+ this.props.colour : '#444';
     var btnStyle = {background: colour};
 
     return (

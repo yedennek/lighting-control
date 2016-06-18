@@ -25,7 +25,6 @@ body {
   padding: 0;
 }
 
-.master-switch,
 .room {
   background-color: rgba(128,128,128,0.1);
   padding: 10px;
@@ -44,21 +43,20 @@ body {
   margin: 0 0 5px;
 }
 
-.master,
 .switch {
   height: 50px;
   width: 50px;
   display: block;
-  border: 2px #666 solid;
-  background-color: #FFF;
+  border: 2px #000 solid;
+  background-color: #555;
   border-radius: 15%;
   transition: background-color 0.25s, border 0.15s, box-shadow 0.35s;
   margin: 15px auto;
-  box-shadow: 0 0 25px #CCC;
+  box-shadow: 0 0 0 #CCC;
   &.active {
-    box-shadow: 0 0 0 #CCC;
-    border: 2px #000 solid;
-    background-color: #555;
+    box-shadow: 0 0 25px #CCC;
+    background-color: #FFF;
+    border: 2px #666 solid;
   }
 }
 

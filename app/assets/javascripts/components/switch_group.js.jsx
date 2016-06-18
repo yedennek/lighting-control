@@ -1,7 +1,9 @@
-var SwitchList = React.createClass({
+var SwitchGroup = React.createClass({
+
   getInitialState: function() {
-    return { rooms: this.props.data, masterOn: true }
+    return { rooms: this.props.data };
   },
+
   loadRoomsFromServer: function() {
     $.ajax({
       url: '/lights',
@@ -29,10 +31,12 @@ var SwitchList = React.createClass({
       }.bind(this)
     });
   },
+
   componentDidMount: function() {
     this.loadRoomsFromServer();
     setInterval(this.loadRoomsFromServer, this.props.pollInterval);
   },
+
   handleButtonClick: function(room) {
     var oldRooms = JSON.parse(this.state.rooms);
     $.each(oldRooms, function() {
@@ -44,15 +48,7 @@ var SwitchList = React.createClass({
     this.setState({rooms: JSON.stringify(oldRooms)});
     this.postRoomToServer(room);
   },
-  handleMasterClick: function() {
-    var oldRooms = JSON.parse(this.state.rooms);
-    var newRooms = oldRooms.map(function(r) {
-      r.on = this.state.masterOn;
-      this.postRoomToServer(r);
-      return r;
-    }, this);
-    this.setState({rooms: JSON.stringify(newRooms), masterOn: !this.state.masterOn});
-  },
+
   render: function() {
     var rooms = JSON.parse(this.state.rooms);
     var switchNodes = rooms.map(function(btn) {
@@ -62,9 +58,6 @@ var SwitchList = React.createClass({
     }, this);
     return (
       <div>
-        <div className="masters">
-          <MasterSwitch name="Master" active={this.state.masterOn} onButtonClick={this.handleMasterClick}/>
-        </div>
         <div className="rooms">
           {switchNodes}
         </div>

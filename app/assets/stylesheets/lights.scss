@@ -3,35 +3,41 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @font-face {
-  font-family: 'Arvo';
+  font-family: "Arvo";
   font-style: normal;
   font-weight: 400;
-  src: local('Arvo'), font_url('arvo.woff2') format('woff2');
+  src: local("Arvo"), font_url("arvo.woff2") format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 
 body {
-  font-family: 'Arvo', 'sans-serif';
-  color: #ddd;
+  font-family: "Arvo", "sans-serif";
+  color: #999;
   padding: 25px;
   margin: 0 auto;
   background-color: #333;
-  background: image_url('background.png');
+  background: image_url("background.png");
+  background-color: rgba(80,0,0,0.7); // Tint color
+  background-blend-mode: multiply;
 }
 
 .rooms {
-  padding: 0px;
+  padding: 0;
 }
 
 .master-switch,
 .room {
-  background-color: rgba(255,255,255,0.1);
+  background-color: rgba(128,128,128,0.1);
   padding: 10px;
   border-radius: 3px;
   margin: 5px;
   display: inline-block;
   min-width: 100px;
   text-align: center;
+  transition: background-color 0.15s;
+  &:hover {
+    background-color: rgba(128,128,128,0.2);
+  }
 }
 
 .switch-label {
@@ -43,27 +49,16 @@ body {
   height: 50px;
   width: 50px;
   display: block;
-  border: 2px #555 solid;
-  background-color: #ffffff;
+  border: 2px #666 solid;
+  background-color: #FFF;
   border-radius: 15%;
-  transition: background-color 0.25s, border 0.15s;
-  margin-bottom: 20px;
-  margin: auto;
+  transition: background-color 0.25s, border 0.15s, box-shadow 0.35s;
+  margin: 15px auto;
+  box-shadow: 0 0 25px #CCC;
+  &.active {
+    box-shadow: 0 0 0 #CCC;
+    border: 2px #000 solid;
+    background-color: #555;
+  }
 }
 
-.master.active {
-  border: 2px #000 solid;
-  background-color: #777;
-}
-
-.switch.active {
-  border: 2px #000 solid;
-}
-
-.switch:hover{
-  border-color: #777;
-}
-
-.switch.active:hover{
-  border-color: #555;
-}

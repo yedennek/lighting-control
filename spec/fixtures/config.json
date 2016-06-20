@@ -1,7 +1,7 @@
 {
   "controllers": [
     { 
-      "ip": "192.168.0.10",
+      "ip": "192.168.0.14",
       "name": "Upstairs",
       "groups" : [
         {
